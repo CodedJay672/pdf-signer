@@ -1,13 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { WebViewerInstance } from "@pdftron/webviewer";
-import { config, webViewerOptions } from "@/lib/config";
-import PdfUploader from "./PdfUploader";
+import { config } from "@/lib/config";
 
 const WorkSpace = () => {
   const viewerRef = useRef<HTMLDivElement | any>(null);
-  const [file, setFile] = useState<File[] | any>(null);
 
   useEffect(() => {
     import("@pdftron/webviewer")
@@ -36,9 +34,6 @@ const WorkSpace = () => {
         <h1 className="text-center font-medium text-base lg:text-lg">
           PDF Signer
         </h1>
-        <div className="w-16 rounded-xl p-2 bg-white/75 cursor-pointer">
-          <h1>Export</h1>
-        </div>
       </header>
       <div className="w-full h-screen overflow-hidden" ref={viewerRef}></div>
     </div>
