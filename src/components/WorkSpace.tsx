@@ -23,6 +23,20 @@ const WorkSpace = () => {
         ).then((instance: WebViewerInstance) => {
           const { documentViewer, annotationManager, Annotations } =
             instance.Core;
+
+          instance.UI.setHeaderItems((header) => {
+            header.push({
+              type: "actionButton",
+              img: "...",
+              onClick: async () => {
+                const doc = documentViewer.getDocument();
+                const xfdfString = await annotationManager.exportAnnotations();
+                const data = await doc.getFileData({
+                  xfdfString,
+                });
+              },
+            });
+          });
         });
       })
       .catch(console.error);
