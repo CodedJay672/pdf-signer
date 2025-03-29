@@ -1,0 +1,31 @@
+{
+  "name": "pdf-signer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "move-static": "cp -a ./node_modules/@pdftron/webviewer/public/ ./public/webviewer",
+    "build": "next build && npm run move-static",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@pdftron/webviewer": "^11.3.0",
+    "@tailwindcss/postcss": "^4.0.17",
+    "next": "14.2.23",
+    "postcss": "^8.5.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-dropzone": "^14.3.8",
+    "react-icons": "^5.5.0",
+    "tailwindcss": "^4.0.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.23",
+    "typescript": "^5"
+  }
+}
